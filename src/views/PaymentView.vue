@@ -22,10 +22,10 @@ secure process. The validation of your payment can take up to
 <img src="" alt="">
         </div>
         <div class="d-flex justify-content-between">
-          <button type="submit" class="btn btn-primary" @click="back">
+          <button type="submit" class="btn btn-primary" @click.prevent="back">
             Back
           </button>
-          <button type="submit" class="btn btn-primary" @click="pay">
+          <button type="submit" class="btn btn-primary" @click.prevent="pay">
             Pay
           </button>
         </div>

@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="d-flex justify-content-end">
-        <button type="submit" class="btn btn-primary" @click="myData">Continue</button>
+        <button type="submit" class="btn btn-primary" @click.prevent="myData">Continue</button>
       </div>
     </div>
     </form>

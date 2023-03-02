@@ -37,11 +37,12 @@ export default {
   },
 
   mounted(){
+    this.isLoading = true,
     apiData().then((res)=> {
-      this.isLoading = true,
-      this.form.title = res.data.title.zh_CN;
-      this.form.message = res.data.message.zh_CN;
       this.isLoading = false;
+      this.form.title = res.data.title.en;
+      this.form.message = res.data.message.en;
+      
     })
   }
 };
