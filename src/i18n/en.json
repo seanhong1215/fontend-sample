@@ -1,8 +1,4 @@
 {
-    "title": {
-
-    },
-    "message": {
-        
-    }
+    "title": "Order Created",
+    "message": "Congratulations, your payment was successful"
 }

@@ -5,12 +5,12 @@ import zhCn from './zhCn.json';
 
 
 const messages = {
-    zh_CN: zhCn,
-    en: en,
+    zhCn,
+    en,
 };
 const i18n = createI18n({
     // locale: store.state.lang, // set locale
-    locale: en, // set locale
+    locale: zhCn, // set locale
     fallbackLocale: 'en', // set fallback locale
     messages,
 });

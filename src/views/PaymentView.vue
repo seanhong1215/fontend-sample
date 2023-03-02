@@ -15,11 +15,8 @@
         <div class="media-area">
           <img src="@/assets/credit-card.png" alt="" width="80">
           <h4>Credit Card</h4>
-          <p class="text-center">You will be redirected to a secure payment platform. This is a
-secure process. The validation of your payment can take up to
-
-24 hours.</p>
-<img src="" alt="">
+          <p class="text-center">You will be redirected to a secure payment platform. This is a secure process. The validation of your payment can take up to 24 hours.</p>
+        <img src="" alt="">
         </div>
         <div class="d-flex justify-content-between">
           <button type="submit" class="btn btn-primary" @click.prevent="back">

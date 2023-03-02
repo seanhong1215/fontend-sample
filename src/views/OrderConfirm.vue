@@ -8,9 +8,9 @@
     </div>
     <form class="form-wrap">
       <div class="form-container m-auto">
-        <h2>{{ form.title }}</h2>
+        <h2>{{ $t('title') }}</h2>
         <img src="@/assets/work-order.png" alt="" />
-        <p class="text-center">{{ form.message }}</p>
+        <p class="text-center">{{ $t('message') }}</p>
       </div>
     </form>
   </div>
@@ -30,19 +30,22 @@ export default {
           tel: '',
           address: '',
         },
-        message: '',
-        title: '',
       },
     };
   },
 
   mounted(){
     this.isLoading = true,
+    this.$i18n.locale = 'en'
     apiData().then((res)=> {
       this.isLoading = false;
-      this.form.title = res.data.title.en;
-      this.form.message = res.data.message.en;
-      
+      if(this.$i18n.locale !== 'en'){
+        this.form.title = res.data.title.zh_CN;
+        this.form.message = res.data.message.zh_CN;
+      } else {
+        this.form.title = res.data.title.en;
+        this.form.message = res.data.message.en;
+      }
     })
   }
 };
