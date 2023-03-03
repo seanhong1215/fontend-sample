@@ -17,18 +17,18 @@
       <div class="form-container m-auto">
       <div class="mb-3 row g-0">
         <div class="col-12">
-          <label for="InputName" class="form-label w-100 text-start">{{ $t('formFirstName')}}<span>*</span></label>
+          <label for="InputFirstName" class="form-label w-100 text-start">{{ $t('formFirstName')}}<span>*</span></label>
           <Field
-            id="InputName"
-            name="Name"
+            id="InputFirstName"
+            :name="$t('form.name')"
             type="text"
             class="form-control"
-            :class="{ 'is-invalid': errors['Name'] }"
-            placeholder="please enter Name"
+            :class="{ 'is-invalid': errors[`${$t('form.name')}`] }"
+            :placeholder="$t('form.inputFirstName')"
             rules="required"
             v-model="form.user.firstName"
           ></Field>
-          <error-message name="Name" class="invalid-feedback"></error-message>
+          <error-message :name="$t('form.name')" class="invalid-feedback"></error-message>
         </div>
       </div>
       <div class="mb-3 row g-0">
@@ -38,15 +38,15 @@
           >
           <Field
             id="InputLastName"
-            name="LastName"
+            :name="$t('form.lastName')"
             type="text"
             class="form-control"
-            :class="{ 'is-invalid': errors['LastName'] }"
-            placeholder="please enter LastName"
+            :class="{ 'is-invalid': errors[`${$t('form.lastName')}`] }"
+            :placeholder="$t('form.inputLastName')"
             rules="required"
             v-model="form.user.lastName"
           ></Field>
-          <error-message name="LastName" class="invalid-feedback"></error-message>
+          <error-message :name="$t('form.lastName')" class="invalid-feedback"></error-message>
         </div>
       </div>
       <div class="d-flex justify-content-end">

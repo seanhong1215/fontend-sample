@@ -17,5 +17,11 @@
         "help": "HELP",
         "signIn": "SIGN IN",
         "continue": "Continue"
+    },
+    "form": {
+        "inputFirstName": "please enter Name",
+        "inputLastName": "please enter LastName",
+        "name": "Name",
+        "lastName": "LastName"
     }
 }

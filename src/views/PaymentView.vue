@@ -18,7 +18,7 @@
       </p>
       <div class="form-container m-auto">
         <div class="media-area">
-          <img src="@/assets/img/credit-card.png" alt="" width="80">
+          <img src="@/assets/img/credit-card.png" alt="credit-card" width="80">
           <h4>{{ $t('creditCardTitle')}}</h4>
           <p class="text-center">{{ $t('creditCardMessage')}}</p>
           <div class="media-wrap d-flex justify-content-center">

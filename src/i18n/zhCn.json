@@ -3,8 +3,8 @@
     "orderMessage": "恭喜您，付款成功。您即將收到一封確認電子郵件",
     "loginTitle": "我的資料",
     "loginMessage": "請輸入您的個人資料，然後按繼續",
-    "formFirstName": "名子",
-    "formLastName": "姓氏",
+    "formFirstName": "姓氏",
+    "formLastName": "名子",
     "paymentTitle": "付款方式",
     "paymentMessage": "付款後，您將收到一封確認電子郵件，其中包含您的購買詳情",
     "creditCardTitle": "信用卡",
@@ -17,5 +17,11 @@
         "help": "求助",
         "signIn": "登入",
         "continue": "繼續"
+    },
+    "form": {
+        "inputFirstName": "請輸入姓氏",
+        "inputLastName": "請輸入名子",
+        "name": "姓氏",
+        "lastName": "名子"
     }
 }

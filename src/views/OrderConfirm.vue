@@ -19,7 +19,7 @@
     <form class="form-wrap">
       <div class="form-container m-auto">
         <h2 ref="orderTitle" >{{ $t('orderTitle') }}</h2>
-        <img src="@/assets/img/work-order.png" alt="" />
+        <img src="@/assets/img/certification-award-svgrepo-com.svg" alt="certification-award" width="80"/>
         <p ref="orderMessage" class="text-center">{{ $t('orderMessage') }}</p>
       </div>
     </form>
@@ -39,7 +39,6 @@ export default {
   mounted(){
     this.$refs.orderTitle.innerText = ''
     this.$refs.orderMessage.innerText = ''
-    this.$i18n.locale = 'en'
     apiData().then((res)=> {
       this.isLoading = false;
       if(this.$i18n.locale !== 'en'){

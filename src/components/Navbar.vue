@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg">
     <button
-      class="navbar-toggler"
+      class="navbar-toggler btn-sm"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNavDropdown"
@@ -58,6 +58,8 @@
   </nav>
 </template>
 <script>
+import { setLocale } from '@vee-validate/i18n';
+
 export default {
   name: "Navbar",
   data() {
@@ -71,9 +73,11 @@ export default {
       if (e.target.innerText === "EN") {
         this.$i18n.locale = "en";
         this.lang = "EN";
+        setLocale('en');
       } else if (e.target.innerText === "CH") {
         this.$i18n.locale = "zhCn";
         this.lang = "CH";
+        setLocale('zh_TW');
       }
     },
   },
