@@ -1,0 +1,63 @@
+// 全域CSS設定
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2a2a2a;
+    background-color: #F0F0F0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .form-wrap{
+    max-width: 960px;
+    margin: auto;
+    margin-top: 60px;
+    padding: 30px 0;  
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    .form-container {
+      max-width: 640px;
+      padding: 60px 20px;
+    }
+    .form-title, .form-message {
+      padding: 0 20px;
+    }
+  }
+    .step {
+      display: flex;
+      max-width: 400px;
+      margin: auto;
+      padding: 0 20px;
+      margin-top: 30px;
+      gap: 12px;
+      .process-line{
+        width: 280px;
+        height: 0.5px;
+        border-style: dashed;
+        border: 1px dashed #c4c4c4;
+        display: block;
+        margin: auto;
+        position: relative;
+        top: -10px;
+      }
+      .process {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .process-text {
+          white-space: nowrap;
+        }
+        i {
+          font-size: 32px;
+          color: #1BA1E2;
+        }
+      } 
+      .btn > i {
+      margin-left: 4px;
+    }
+    
+    }

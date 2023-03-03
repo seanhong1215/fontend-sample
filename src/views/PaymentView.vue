@@ -1,29 +1,37 @@
 <template>
   <div class="container">
     <div class="step">
-      <i class="bi bi-check-circle-fill"></i>
-      <span class="process-line"></span>
-      <i class="bi bi-2-circle-fill"></i>
+      <div class="process">
+        <i class="bi bi-check-circle-fill"></i>
+        <span class="process-text">{{ $t('common.step1')}} </span>
+      </div>
+      <div class="process-line"></div>
+      <div class="process">
+        <i class="bi bi-2-circle-fill"></i>
+        <span class="process-text">{{ $t('common.step2')}} </span>
+      </div>
     </div>
     <form class="form-wrap">
-      <h4>Payment</h4>
-      <p>
-        After making the payment you will receive a confirmation email with
-        details of your purchase
+      <h4 class="form-title">{{ $t('paymentTitle')}}</h4>
+      <p class="form-message">
+        {{ $t('paymentMessage')}}
       </p>
       <div class="form-container m-auto">
         <div class="media-area">
-          <img src="@/assets/credit-card.png" alt="" width="80">
-          <h4>Credit Card</h4>
-          <p class="text-center">You will be redirected to a secure payment platform. This is a secure process. The validation of your payment can take up to 24 hours.</p>
-        <img src="" alt="">
+          <img src="@/assets/img/credit-card.png" alt="" width="80">
+          <h4>{{ $t('creditCardTitle')}}</h4>
+          <p class="text-center">{{ $t('creditCardMessage')}}</p>
+          <div class="media-wrap d-flex justify-content-center">
+            <img src="@/assets/img/Visa_Logo.png" alt="Visa" width="60">
+            <img src="@/assets/img/Mastercard-logo.png" alt="Mastercard" width="60">
+          </div>
         </div>
         <div class="d-flex justify-content-between">
-          <button type="submit" class="btn btn-primary" @click.prevent="back">
-            Back
+          <button type="button" class="btn btn-primary" @click.prevent="back">
+            <i class="bi bi-arrow-left"></i>{{ $t('common.btnBack')}} 
           </button>
-          <button type="submit" class="btn btn-primary" @click.prevent="pay">
-            Pay
+          <button type="button" class="btn btn-primary" @click.prevent="pay">
+            {{ $t('common.btnPay')}} <i class="bi bi-arrow-right"></i>
           </button>
         </div>
       </div>
@@ -39,10 +47,10 @@ export default {
   },
   methods: {
     back() {
-      this.$router.push({ path: "/checkout/step-1-my-data" });
+      this.$router.push({ path: "/" });
     },
     pay() {
-      this.$router.push({ path: "/checkout/step-3-order-confirmation" });
+      this.$router.push({ path: "/step-3-order-confirmation" });
     },
   },
 };
@@ -50,8 +58,8 @@ export default {
 
 <style lang="scss" scoped>
 .step {
-  i:first-child {
-    color: green;
+  .process:first-child i{
+    color: #198754;
   }
 }
 .form-container {
@@ -62,4 +70,11 @@ export default {
   margin-bottom: 40px;
   padding: 30px 15px;
 }
+.media-wrap img:first-child {
+  margin-right: 12px;
+}
+.btn:first-child i {
+  margin-right: 4px;
+}
+
 </style>

@@ -2,15 +2,25 @@
   <Loading :active="isLoading"></Loading>
   <div class="container">
     <div class="step">
-      <i class="bi bi-check-circle-fill"></i>
-      <span class="process-line"></span>
-      <i class="bi bi-check-circle-fill"></i>
+      <div class="process">
+        <i class="bi bi-check-circle-fill"></i>
+        <span class="process-text">{{ $t('common.step1')}} </span>
+      </div>
+      <div class="process-line"></div>
+      <div class="process" v-if="isLoading">
+        <i class="bi bi-2-circle-fill" style="color: #1BA1E2;"></i>
+        <span class="process-text">{{ $t('common.step2')}} </span>
+      </div>
+      <div class="process" v-else>
+        <i class="bi bi-check-circle-fill" style="color: #198754;"></i>
+        <span class="process-text">{{ $t('common.step2')}} </span>
+      </div>
     </div>
     <form class="form-wrap">
       <div class="form-container m-auto">
-        <h2>{{ $t('title') }}</h2>
-        <img src="@/assets/work-order.png" alt="" />
-        <p class="text-center">{{ $t('message') }}</p>
+        <h2 ref="orderTitle" >{{ $t('orderTitle') }}</h2>
+        <img src="@/assets/img/work-order.png" alt="" />
+        <p ref="orderMessage" class="text-center">{{ $t('orderMessage') }}</p>
       </div>
     </form>
   </div>
@@ -22,29 +32,22 @@ export default {
   name: 'OrderConfirm',
   data() {
     return {
-      isLoading: false,
-      form: {
-        user: {
-          name: '',
-          email: '',
-          tel: '',
-          address: '',
-        },
-      },
+      isLoading: true,
     };
   },
 
   mounted(){
-    this.isLoading = true,
+    this.$refs.orderTitle.innerText = ''
+    this.$refs.orderMessage.innerText = ''
     this.$i18n.locale = 'en'
     apiData().then((res)=> {
       this.isLoading = false;
       if(this.$i18n.locale !== 'en'){
-        this.form.title = res.data.title.zh_CN;
-        this.form.message = res.data.message.zh_CN;
+        this.$refs.orderTitle.innerText = res.data.title.zh_CN;
+        this.$refs.orderMessage.innerText = res.data.message.zh_CN;
       } else {
-        this.form.title = res.data.title.en;
-        this.form.message = res.data.message.en;
+        this.$refs.orderTitle.innerText = res.data.title.en;
+        this.$refs.orderMessage.innerText = res.data.message.en;
       }
     })
   }
@@ -53,8 +56,8 @@ export default {
 
 <style lang="scss" scoped>
 .step {
-  i {
-    color: green;
+  .process:first-child i{
+    color: #198754;
   }
 }
 .form-container{

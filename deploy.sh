@@ -20,10 +20,6 @@ git checkout -B main
 git add -A
 git commit -m 'deploy'
 
-# if you are deploying to https://seanhong1215.github.io
-# git push -f git@github.com:seanhong1215/seanhong1215.github.io.git main
-
-# if you are deploying to https://seanhong1215.github.io/vite-sample
 git push -f git@github.com:seanhong1215/fontend-sample.git main:gh-pages
 
 cd -
