@@ -111,7 +111,9 @@ li {
   }
 }
 .dropdown-menu.show {
-  width: 15%;
-  margin: auto;
+  min-width: 80px;
+  margin-left: 12px;
+  box-shadow: 2px 2px 0 0 rgba(102,102,102,0.25);
 }
+
 </style>
